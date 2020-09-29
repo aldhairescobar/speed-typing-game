@@ -1,47 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
+import useTypingGame from "./hooks/useTypingGame";
 
 function App() {
-  const STARTING_TIME = 10;
-
-  const [text, setText] = useState("");
-  const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME);
-  const [isTimeRunning, setIsTimeRunning] = useState(false);
-  const [wordCount, setWordCount] = useState(0);
-  const textareaRef = useRef(null);
-
-  function handleChange(e) {
-    const { value } = e.target;
-    setText(value);
-  }
-
-  function countWords(text) {
-    const wordsArr = text.trim().split(" ");
-    const filtered = wordsArr.filter((word) => word !== "");
-    return filtered.length;
-  }
-
-  function startGame() {
-    setIsTimeRunning(true);
-    setText("");
-  }
-
-  function endGame() {
-    setIsTimeRunning(false);
-    const numWords = countWords(text);
-    setWordCount(numWords);
-    setTimeRemaining(STARTING_TIME);
-  }
-
-  useEffect(() => {
-    if (timeRemaining > 0 && isTimeRunning) {
-      setTimeout(() => {
-        setTimeRemaining((prevTime) => prevTime - 1);
-      }, 1000);
-      textareaRef.current.focus();
-    } else if (timeRemaining === 0) {
-      endGame();
-    }
-  }, [timeRemaining, isTimeRunning]);
+  const {
+    textareaRef,
+    isTimeRunning,
+    text,
+    handleChange,
+    timeRemaining,
+    startGame,
+    wordCount,
+  } = useTypingGame();
 
   return (
     <div>
