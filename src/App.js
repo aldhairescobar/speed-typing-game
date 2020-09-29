@@ -10,7 +10,7 @@ function App() {
     timeRemaining,
     startGame,
     wordCount,
-  } = useTypingGame();
+  } = useTypingGame(15);
 
   return (
     <div>

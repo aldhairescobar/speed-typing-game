@@ -30,6 +30,7 @@ function useTypingGame(startingTime = 10) {
     setTimeRemaining(startingTime);
   }
 
+  /* textareaRef focus the textbox when game start */
   useEffect(() => {
     if (timeRemaining > 0 && isTimeRunning) {
       setTimeout(() => {
