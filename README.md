@@ -2,16 +2,20 @@
 
 ## What I Learned
 
--
+- I learned about "useRef" and I built my first "Custom Hook"
+- I practiced with (useEffect), so I'm getting used to it.
+- It was interesting to use "filter" in this way to clean my array of words.
 
 ## Demo
 
-(Link)
-(Image)
+https://speed-typing-game-reactjs.herokuapp.com/
+
+<img width="816" alt="fast" src="https://user-images.githubusercontent.com/63808163/94511711-c8046c80-01df-11eb-91c6-02c6b91e8151.PNG">
 
 ## Built with
 
--
+- ReactJs
+- CSS
 
 ### React README
 
